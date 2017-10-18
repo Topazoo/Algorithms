@@ -35,27 +35,6 @@ const int matrix2[10][10]  = {    //Disjoint
                     {0,0,0,0,0,1,0,1,1,0},
                     };
 
-
-/* ---------------------------- Debug ---------------------------- */
-
-void print_list(list<int>* adj_list)
-{
-    //Print an adjacency list
-    int num_nodes = sizeof(*matrix)/sizeof(**matrix);
-    list<int>::iterator adj_node;
-
-    for(int node_list = 0; node_list < num_nodes; node_list++)
-    {
-        for(adj_node = adj_list[node_list].begin(); 
-            adj_node != adj_list[node_list].end(); adj_node++)
-            cout << *adj_node << " ";
-
-        cout << endl;
-    }
-}
-
-/* --------------------------------------------------------------- */
-
 list<int>* matrix_to_list(int num_nodes) {
 
     //Dynamically create an array containing a list for each node.
@@ -125,19 +104,16 @@ void run_dfs(list<int>* adj_list, int num_nodes,
 {
     list<int>::iterator adj_node;
 
-
     //If first recursive step, create list of visited nodes
     if(! visited_nodes)
     {
         visited_nodes = new bool[num_nodes];
         cout << "DFS Result: "; 
     }
-    
 
     //Mark node as visited
     cout << start_node << " ";
     visited_nodes[start_node] = 1;
-
 
     //Recurse on all unvisited children
     for(adj_node = adj_list[start_node].begin(); 
@@ -149,6 +125,8 @@ void run_dfs(list<int>* adj_list, int num_nodes,
 
 int get_input_matrix()
 {
+    //Matrix to perform search on
+
     int mat = 0;
 
     cout << "Choose a Matrix:" << endl;
