@@ -120,10 +120,8 @@ void run_dfs(list<int>* adj_list, int num_nodes,
     for(adj_node = adj_list[start_node].begin(); 
         adj_node != adj_list[start_node].end(); adj_node++)
         if(visited_nodes[*adj_node] == 0)
-        {
-            //cout << *adj_node << endl;
             run_dfs(adj_list, num_nodes, visited_nodes, *adj_node);
-        }
+        
 }
 
 int get_input_matrix()
