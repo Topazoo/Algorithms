@@ -107,20 +107,23 @@ void run_dfs(list<int>* adj_list, int num_nodes,
     //If first recursive step, create list of visited nodes
     if(! visited_nodes)
     {
-        visited_nodes = new bool[num_nodes];
+        visited_nodes = new bool[num_nodes]();
         cout << "DFS Result: "; 
     }
 
     //Mark node as visited
     cout << start_node << " ";
+
     visited_nodes[start_node] = 1;
 
     //Recurse on all unvisited children
     for(adj_node = adj_list[start_node].begin(); 
         adj_node != adj_list[start_node].end(); adj_node++)
         if(visited_nodes[*adj_node] == 0)
+        {
+            //cout << *adj_node << endl;
             run_dfs(adj_list, num_nodes, visited_nodes, *adj_node);
-
+        }
 }
 
 int get_input_matrix()
