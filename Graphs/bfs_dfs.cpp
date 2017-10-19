@@ -67,7 +67,7 @@ void run_bfs(list<int>* adj_list, int num_nodes, int start_node)
 {
     queue<int> nodes_to_visit;
     list<int>::iterator adj_node;
-    bool* visited_nodes = new bool[num_nodes]; 
+    bool* visited_nodes = new bool[num_nodes](); 
 
     cout << "BFS Result: "; 
 
