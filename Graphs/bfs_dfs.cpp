@@ -3,7 +3,7 @@
 #include <iterator>
 #include <stack>
 #include <queue>
-#include<limits>
+#include <limits>
 
 using namespace std;
 
@@ -97,9 +97,11 @@ void run_bfs(list<int>* adj_list, int num_nodes, int start_node)
     }
 
     cout << endl;
+
+    delete visited_nodes;
 }
 
-void run_dfs(list<int>* adj_list, int num_nodes, 
+bool* run_dfs(list<int>* adj_list, int num_nodes, 
                 bool* visited_nodes, int start_node)
 {
     list<int>::iterator adj_node;
@@ -121,7 +123,9 @@ void run_dfs(list<int>* adj_list, int num_nodes,
         adj_node != adj_list[start_node].end(); adj_node++)
         if(visited_nodes[*adj_node] == 0)
             run_dfs(adj_list, num_nodes, visited_nodes, *adj_node);
-        
+
+    //Only send dynamic array to be deleted at the very end of the recursion
+    return visited_nodes;
 }
 
 int get_input_matrix()
@@ -201,7 +205,8 @@ int main() {
     run_bfs(adj_list, num_nodes, start);
 
     //Run a Depth-First Search of the graph
-    run_dfs(adj_list, num_nodes, NULL, start);
+    delete run_dfs(adj_list, num_nodes, NULL, start);
+    //This delete collects garbage outside of the recursion
     
     cout << endl;
 
