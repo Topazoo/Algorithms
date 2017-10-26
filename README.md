@@ -1,5 +1,5 @@
 # ECS122A-Algorithms
-Not written or used for any homework or assignments
+Written for practice not schoolwork
 
 ## Stable Matching
 - The Gale-Shapley Algorithm
@@ -7,5 +7,5 @@ Not written or used for any homework or assignments
 ## Graphing
 - Adjacency List from Matrix
 - BFS Implemented With a Queue
-- DFS iImplemented Recursively
+- DFS Implemented Recursively
 
