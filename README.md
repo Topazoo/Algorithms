@@ -1,5 +1,5 @@
 # ECS122A-Algorithms
-Written for practice not schoolwork
+Written for practice (not schoolwork)
 
 ## Stable Matching
 - The Gale-Shapley Algorithm
