@@ -118,23 +118,23 @@ list<Vertex*>* build_adj_list()
 {
     //Build a static adjacency list
     list<Vertex*>* adj_list = new list<Vertex*>[8]();
-    
-    add_to_list(adj_list, 0, 2, 8);
-    add_to_list(adj_list, 0, 3, 6);
-    add_to_list(adj_list, 0, 4, 5);
-
-    add_to_list(adj_list, 1, 2, 2);
-    add_to_list(adj_list, 1, 5, 2);
-
-    add_to_list(adj_list, 2, 0, 8);
-    add_to_list(adj_list, 2, 1, 2);
-    add_to_list(adj_list, 2, 5, 7);
-
-    add_to_list(adj_list, 3, 0, 6);
-    add_to_list(adj_list, 3, 5, 9);
-
-    add_to_list(adj_list, 4, 0, 5);
-    
+                                   //                         5    
+    add_to_list(adj_list, 0, 2, 8);//                 ( 0 ) ------- ( 4 )
+    add_to_list(adj_list, 0, 3, 6);//                /    \.     
+    add_to_list(adj_list, 0, 4, 5);//               /      \ 8 
+                                   //            6 /        \. 
+    add_to_list(adj_list, 1, 2, 2);//             /      2   \. 
+    add_to_list(adj_list, 1, 5, 2);//            / ( 1 ) -- ( 2 )
+                                   //         ( 3 ) /      _--
+    add_to_list(adj_list, 2, 0, 8);//           |  / 2  _--
+    add_to_list(adj_list, 2, 1, 2);//         9 | /  _--   7
+    add_to_list(adj_list, 2, 5, 7);//           |/_--
+                                   //         ( 5 ) ------- ( 6 )
+    add_to_list(adj_list, 3, 0, 6);//                   6     |
+    add_to_list(adj_list, 3, 5, 9);//                         | 3      
+                                   //                         | 
+    add_to_list(adj_list, 4, 0, 5);//                       ( 7 )
+   
     add_to_list(adj_list, 5, 1, 2);
     add_to_list(adj_list, 5, 2, 7);
     add_to_list(adj_list, 5, 3, 9);
@@ -147,24 +147,6 @@ list<Vertex*>* build_adj_list()
     
     return adj_list;
 }
-
-// void print_list(list<Vertex*> adj_list_node)
-// {
-//     list<Vertex*>::iterator it;
-
-//     for(it = adj_list_node.begin(); it != adj_list_node.end(); it++)
-//         cout << "Dist: " << (*it)->distance << endl;
-    
-// }
-
-// void print_all(list<Vertex*>* adj_list)
-// {
-//     for(int i = 0; i < 8; i++)
-//     {
-//         print_list(adj_list[i]);
-//         cout << endl;
-//     }
-// }
 
 int get_input(int num_nodes, int op)
 {
