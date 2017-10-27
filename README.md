@@ -8,4 +8,4 @@ Written for practice not schoolwork
 - Adjacency List from Matrix
 - BFS Implemented With a Queue
 - DFS Implemented Recursively
-
+- Dijkstra's Shortest Path Algorithm
